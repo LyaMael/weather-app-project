@@ -4,6 +4,10 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+footer {
+  color: #575e94;
+  text-align: center;
+}
 #button {
   color: #aa97c7;
   background-color: #ebe4e4;
