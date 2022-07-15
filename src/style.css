@@ -4,13 +4,18 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
-.btn {
+#button {
   color: #aa97c7;
   background-color: #ebe4e4;
   border-color: #aa97c7;
   margin: 0;
 }
-
+#location-button {
+  color: #aa97c7;
+  background-color: #ebe4e4;
+  border-color: #aa97c7;
+  margin: 0;
+}
 .container {
   margin: 40px 45px;
   font-family: "Fuzzy Bubbles", cursiv;
