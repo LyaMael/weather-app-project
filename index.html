@@ -7,100 +7,160 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>WeatherApp</title>
     <link rel="stylesheet" href="src/style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Corinthia&family=Dancing+Script&family=Estonia&family=Fuzzy+Bubbles&family=Gugi&family=Inconsolata:wght@200&display=swap" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Corinthia&family=Dancing+Script&family=Estonia&family=Fuzzy+Bubbles&family=Gugi&family=Inconsolata:wght@200&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    
-<div class="container">
-  
-<div class="weatherApp">
-<form id="search">
-<div class="row" >
-  <div class="col-6">
-      <div class="mb-3">
-          <input type="search" autofocus="on" placeholder="Search for City"class="form-control shadow-sm" id="search-city-input" aria-describedby="emailHelp">
-    </div></div>
- <div class="col-2">
-     <button type="submit"  class="btn btn-primary shadow-sm" id="button" >Search</button>
+    <div class="container">
+      <div class="weatherApp">
+        <form id="search">
+          <div class="row">
+            <div class="col-6">
+              <div class="mb-3">
+                <input
+                  type="search"
+                  autofocus="on"
+                  placeholder="Search for City"
+                  class="form-control shadow-sm"
+                  id="search-city-input"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+            </div>
+            <div class="col-2">
+              <button
+                type="submit"
+                class="btn btn-primary shadow-sm"
+                id="button"
+              >
+                Search
+              </button>
+            </div>
+            <div class="col-2">
+              <button
+                type="submit"
+                class="btn btn-primary shadow-sm"
+                id="location-button"
+              >
+                Location
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="row" id="main-info">
+          <div class="col-4">
+            <form id="different-messure">
+              <ul>
+                <li class="heading" id="display-city">Würzburg, DE</li>
+                <li><small class="date" id="current-date"> </small></li>
+                <li>
+                  <span class="degree" id="current-temperature">22°</span>
+                  <span class="messure" id="different-messure"
+                    ><span id="celcius">°C </span> |
+                    <span id="fahrenheit">°F</span></span
+                  >
+                </li>
+
+                <li class="weatherDetails">
+                  <div id="wind">Wind:</div>
+                  <div id="humidity">Humidity:</div>
+                  <div id="visibility">Visibility:</div>
+                </li>
+              </ul>
+            </form>
+          </div>
+          <div class="col-2" id="sympol-now">
+            <img
+              src="imaages/sun.svg"
+              width="200"
+              alt="image-sun"
+              id="current-image"
+            />
+          </div>
+          <div class="col-6" id="sunset">
+            <div class="weather-today shadow">
+              <div class="sunset">Sunset</div>
+              <div class="hour">9:18pm</div>
+              <div class="sunset">Sunrise</div>
+              <div class="hour">5:17am</div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <section class="week">
+          <div class="forecastWrapper">
+            <div class="row" id="weather-cards">
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Thursday</h5>
+                    <img src="imaages/sun.svg" class="week-icon" alt="" />
+                    <p class="card-text">22°</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Friday</h5>
+                    <img src="imaages/lightning.svg" class="week-icon" alt="" />
+                    <p class="card-text">27°</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Saturday</h5>
+                    <img src="imaages/rainLight.svg" class="week-icon" alt="" />
+                    <p class="card-text">26°</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Sunday</h5>
+                    <img src="imaages/lightning.svg" class="week-icon" alt="" />
+                    <p class="card-text">27°</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Monday</h5>
+                    <img src="imaages/cloudy.svg" class="week-icon" alt="" />
+                    <p class="card-text">24°</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr />
+        <footer>
+          <a
+            href="https://github.com/LyaMael/weather-app-project"
+            target="blank"
+            class="github"
+          >
+            Open-source code</a
+          >
+          by Janina Wehner
+        </footer>
+      </div>
     </div>
-  <div class="col-2 ">
-      <button type="submit" class="btn btn-primary shadow-sm" id="location-button" >Location</button>
-    </div>
-</div>
-</form>
-<div class="row" id="main-info">
-  <div class="col-4">
-  <form id="different-messure">
-    <ul> 
-    <li class="heading" id="display-city">
-    Würzburg, DE
-    </li>
-    <li><small class="date" id="current-date"> </small>
-    </li>
-    <li >
-      <span class="degree" id="current-temperature">22°</span>
-      <span class="messure" id="different-messure"><span id= "celcius">°C </span> | <span id="fahrenheit">°F</span></span>
-    </li>
-    
-    <li class="weatherDetails">
-      <div id="wind">Wind:</div><div id="humidity">Humidity:</div><div id="visibility">Visibility:</div>
-    </li>
-  </ul>
-</form>
-</div>
-<div class="col-2"id="sympol-now"><img src="imaages/sun.svg" width="200"alt="image-sun" id= "current-image"></div>
-<div class="col-6" id="sunset">
-  <div class="weather-today shadow">
-    <div class="sunset">Sunset</div>
-<div class="hour">9:18pm</div>
-<div class="sunset">Sunrise</div>
-<div class="hour">5:17am</div></div>
-  </div></div>
-<hr>
-<section class="week">
-<div class="forecastWrapper"><div class="row" id="weather-cards">
-  <div class="col"><div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Thursday</h5>
-    <img src="imaages/sun.svg" class="week-icon"alt="">
-    <p class="card-text">22°</p>
-  </div>
-</div></div>
-<div class="col"><div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Friday</h5>
-    <img src="imaages/lightning.svg" class="week-icon"alt="">
-    <p class="card-text">27°</p>
-  </div>
-</div></div>
-<div class="col"><div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Saturday</h5>
-    <img src="imaages/rainLight.svg" class="week-icon"alt="">
-    <p class="card-text">26°</p>
-  </div>
-</div></div>
-<div class="col">
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Sunday</h5>
-    <img src="imaages/lightning.svg" class="week-icon"alt="">
-    <p class="card-text">27°</p>
-  </div>
-</div></div>
-<div class="col"><div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Monday</h5>
-    <img src="imaages/cloudy.svg" class="week-icon"alt="">
-    <p class="card-text">24°</p>
-  </div>
-</div></div>
-</div>
-  </div></div> </div>  </section>
- <script src="src/index.js">
-   </script> 
-</body>
+    <script src="src/index.js"></script>
+  </body>
 </html>
