@@ -8,6 +8,10 @@ footer {
   color: #575e94;
   text-align: center;
 }
+.github {
+  color: #575e94;
+  text-decoration: none;
+}
 #button {
   color: #aa97c7;
   background-color: #ebe4e4;
