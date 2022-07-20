@@ -58,6 +58,13 @@ function showTemp(response) {
   document.querySelector(
     "#visibility"
   ).innerHTML = `Visibility: ${response.data.weather[0].description}`;
+  document.querySelector("#hour-sunset").innerHTML = `${localised}`;
+  let dateSunrise = new Date(response.data.sys.sunrise * 1e3);
+  localised = dateSunrise.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  document.querySelector("#hour-sunrise").innerHTML = `${localised}`;
 }
 function search(city) {
   let apiKey = `0b72be15629b34cd08cec539aec6e195`;
