@@ -58,6 +58,11 @@ function showTemp(response) {
   document.querySelector(
     "#visibility"
   ).innerHTML = `Visibility: ${response.data.weather[0].description}`;
+  let dateSunset = new Date(response.data.sys.sunset * 1e3);
+  localised = dateSunset.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
   document.querySelector("#hour-sunset").innerHTML = `${localised}`;
   let dateSunrise = new Date(response.data.sys.sunrise * 1e3);
   localised = dateSunrise.toLocaleTimeString([], {
