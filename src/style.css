@@ -17,8 +17,12 @@ footer {
   background-color: #ebe4e4;
   border-color: #aa97c7;
   margin: 0;
+  transition: all 200ms ease-in-out;
 }
-
+.btn :hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
 .container {
   margin: 40px 45px;
   font-family: "Fuzzy Bubbles", cursiv;
